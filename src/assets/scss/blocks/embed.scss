@@ -1,0 +1,25 @@
+.embed,     //адаптация видео под размер блока
+.fr-video { //в October CMS добавляется видео с таким классом
+  display: block;
+  position: relative;
+  overflow: hidden;
+
+  &:before {
+    content: "";
+    display: block;
+    padding-top: 56.25%; // 9 / 16 прямоугольник в соотношении 16 на 9
+  }
+
+  iframe,
+  video,
+  object,
+  embed {
+    width: 100%;
+    height: 100%;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+  }
+}
